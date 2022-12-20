@@ -44,6 +44,6 @@ public class Inicio extends JFrame {
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(335, 377, 89, 23);
 		contentPane.add(btnNewButton);
-		//probando
+		//probando2
 	}
 }
