@@ -35,6 +35,21 @@ public class Proyecto {
 		this.sprint = sprint;
 	}
 	
+	public boolean añadirTarea(Tarea t) {
+		if(!tareas.contains(t)) {
+			this.tareas.add(t);
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
-	//
+	public boolean añadirTrabajador(Trabajador t) {
+		if(!trabajadores.contains(t)) {
+			this.trabajadores.add(t);
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
