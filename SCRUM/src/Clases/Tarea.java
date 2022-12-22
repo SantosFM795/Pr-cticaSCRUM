@@ -11,6 +11,7 @@ public class Tarea {
 		this.esfuerzo.add(0, esf_inicial);
 	}
 	
+	//Beti
 	public void añadirEsfuerzo(int esf, int dia) {
 		if(esfuerzo.size()<dia-1) {
 			for(int i=esfuerzo.size();i<dia-1;i++) {
