@@ -22,6 +22,14 @@ public class Proyecto {
 		return tareas;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setNombre(String n) {
+		this.nombre = n;
+	}
+	
 	public int getDuracion() {
 		return duracion;
 	}
