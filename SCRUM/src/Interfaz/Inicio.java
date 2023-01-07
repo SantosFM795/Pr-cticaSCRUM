@@ -38,6 +38,7 @@ public class Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Inicio() {
+		p=new Proyecto();
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 517);
@@ -77,7 +78,6 @@ public class Inicio extends JFrame {
 		JButton bGrafica = new JButton("Generar gráfica");
 		bGrafica.setBounds(407, 339, 141, 39);
 		contentPane.add(bGrafica);
-		
 		bVer.setVisible(false);
 		bActualizar.setVisible(false);
 		bGrafica.setVisible(false);
