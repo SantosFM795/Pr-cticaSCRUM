@@ -53,10 +53,16 @@ public class Inicio extends JFrame {
 		contentPane.add(bCrear);
 		
 		JButton bTarea = new JButton("Añadir Tarea");
+		
 		bTarea.setBounds(64, 94, 111, 39);
 		contentPane.add(bTarea);
 		
 		JButton bTrabajador = new JButton("Añadir Trabajador");
+		bTrabajador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				bTarea.setVisible(true);
+			}
+		});
 		bTrabajador.setBounds(282, 94, 130, 39);
 		contentPane.add(bTrabajador);
 		
@@ -80,9 +86,23 @@ public class Inicio extends JFrame {
 		
 		bCrear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bTarea.setVisible(true);
+				ICreacionProyecto creacion = new ICreacionProyecto(p);
+				creacion.setVisible(true);
 				bTrabajador.setVisible(true);
+				bCrear.setVisible(false);
 			}
 		});
+		
+		bTarea.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IAñadirTarea tarea=new IAñadirTarea(p);
+				tarea.setVisible(true);
+				bVer.setVisible(true);
+				bActualizar.setVisible(true);
+				bGrafica.setVisible(true);
+			}
+		});
+		
+		
 	}
 }
