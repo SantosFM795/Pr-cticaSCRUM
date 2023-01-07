@@ -24,11 +24,13 @@ import java.awt.Choice;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class IAñadirTarea extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField tNombre;
+	private JTextField tHoras;
 
 	/**
 	 * Launch the application.
@@ -53,24 +55,40 @@ public class IAñadirTarea extends JFrame {
 		lblNewLabel.setBounds(59, 113, 144, 14);
 		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(253, 112, 303, 27);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tNombre = new JTextField();
+		tNombre.setBounds(280, 113, 303, 27);
+		contentPane.add(tNombre);
+		tNombre.setColumns(10);
 		
 		JLabel lblResponsableDeLa = new JLabel("Responsable de la tarea:");
 		lblResponsableDeLa.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblResponsableDeLa.setBounds(59, 240, 171, 27);
+		lblResponsableDeLa.setBounds(59, 290, 171, 27);
 		contentPane.add(lblResponsableDeLa);
 		
 		Choice choice = new Choice();
-		choice.setBounds(253, 247, 144, 20);
+		choice.setBounds(280, 297, 144, 20);
 		contentPane.add(choice);
 		
 		Button button = new Button("Aceptar");
 		
 		button.setBounds(568, 345, 70, 22);
 		contentPane.add(button);
+		
+		JLabel lblEsfuerzoInicial = new JLabel("Esfuerzo Inicial (en horas):");
+		lblEsfuerzoInicial.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblEsfuerzoInicial.setBounds(59, 202, 196, 27);
+		contentPane.add(lblEsfuerzoInicial);
+		
+		tHoras = new JTextField();
+		tHoras.setColumns(10);
+		tHoras.setBounds(280, 204, 37, 27);
+		contentPane.add(tHoras);
+		
+		JLabel lerror = new JLabel("*Rellene todos los campos");
+		lerror.setForeground(Color.RED);
+		lerror.setBounds(59, 353, 258, 14);
+		contentPane.add(lerror);
+		lerror.setVisible(false);
 		ArrayList<Trabajador> t=new ArrayList<Trabajador>();
 		//t=p.getTrabajadores();
 		for (int i = 0; i < t.size(); i++) {
@@ -79,10 +97,10 @@ public class IAñadirTarea extends JFrame {
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(textField.getText().equalsIgnoreCase("")) {
-					
+				if(tNombre.getText().equalsIgnoreCase("") || tHoras.getText().equalsIgnoreCase("")) {
+					lerror.setVisible(true);
 				}else {
-					Tarea tareaAux=new Tarea(textField.getText(),0);
+					Tarea tareaAux=new Tarea(tNombre.getText(),Integer.parseInt(tHoras.getText()),"B");
 					p.añadirTarea(tareaAux);
 					setVisible(false);
 					dispose();

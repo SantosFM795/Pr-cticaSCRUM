@@ -7,11 +7,7 @@ public class Proyecto {
 	private int duracion, sprint;
 	private String nombre;
 	
-	public Proyecto(String nombre, int duracion, int sprint) {
-		this.nombre=nombre;
-		this.duracion=duracion;
-		this.sprint=sprint;
-	}
+	
 	
 	
 	public ArrayList<Trabajador> getTrabajadores() {
