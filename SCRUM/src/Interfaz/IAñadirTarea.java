@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Clases.Proyecto;
 import Clases.Tarea;
 import Clases.Trabajador;
 
@@ -32,23 +33,12 @@ public class IAñadirTarea extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IAñadirTarea frame = new IAñadirTarea();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public IAñadirTarea() {
+	public IAñadirTarea(Proyecto p) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -82,16 +72,20 @@ public class IAñadirTarea extends JFrame {
 		button.setBounds(568, 345, 70, 22);
 		contentPane.add(button);
 		ArrayList<Trabajador> t=new ArrayList<Trabajador>();
+		//t=p.getTrabajadores();
 		for (int i = 0; i < t.size(); i++) {
 			choice.add(t.get(i).getNombre());
 		}
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(textField.getText()=="") {
+				if(textField.getText().equalsIgnoreCase("")) {
 					
 				}else {
 					Tarea tareaAux=new Tarea(textField.getText(),0);
+					p.añadirTarea(tareaAux);
+					setVisible(false);
+					dispose();
 				}
 			}
 		});
