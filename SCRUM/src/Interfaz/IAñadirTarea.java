@@ -8,7 +8,6 @@ import javax.swing.border.EmptyBorder;
 
 import Clases.Proyecto;
 import Clases.Tarea;
-import Clases.Trabajador;
 
 import javax.swing.JLabel;
 import java.awt.Font;
