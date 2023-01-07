@@ -90,7 +90,7 @@ public class IAñadirTarea extends JFrame {
 		contentPane.add(lerror);
 		lerror.setVisible(false);
 		ArrayList<Trabajador> t=new ArrayList<Trabajador>();
-		//t=p.getTrabajadores();
+		t=p.getTrabajadores();
 		for (int i = 0; i < t.size(); i++) {
 			choice.add(t.get(i).getNombre());
 		}
@@ -100,7 +100,7 @@ public class IAñadirTarea extends JFrame {
 				if(tNombre.getText().equalsIgnoreCase("") || tHoras.getText().equalsIgnoreCase("")) {
 					lerror.setVisible(true);
 				}else {
-					Tarea tareaAux=new Tarea(tNombre.getText(),Integer.parseInt(tHoras.getText()),"B");
+					Tarea tareaAux=new Tarea(tNombre.getText(),Integer.parseInt(tHoras.getText()),choice.getSelectedItem());
 					p.añadirTarea(tareaAux);
 					setVisible(false);
 					dispose();

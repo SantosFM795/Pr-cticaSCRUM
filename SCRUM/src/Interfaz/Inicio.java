@@ -59,11 +59,7 @@ public class Inicio extends JFrame {
 		contentPane.add(bTarea);
 		
 		JButton bTrabajador = new JButton("Añadir Trabajador");
-		bTrabajador.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				bTarea.setVisible(true);
-			}
-		});
+		
 		bTrabajador.setBounds(282, 94, 130, 39);
 		contentPane.add(bTrabajador);
 		
@@ -100,6 +96,14 @@ public class Inicio extends JFrame {
 				bVer.setVisible(true);
 				bActualizar.setVisible(true);
 				bGrafica.setVisible(true);
+			}
+		});
+		
+		bTrabajador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IAñadirEquipo equipo=new IAñadirEquipo(p);
+				equipo.setVisible(true);
+				bTarea.setVisible(true);
 			}
 		});
 		
