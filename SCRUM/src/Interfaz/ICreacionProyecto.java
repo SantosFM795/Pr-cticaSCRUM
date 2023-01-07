@@ -77,7 +77,7 @@ public class ICreacionProyecto extends JFrame {
 		
 		JLabel MensajeError = new JLabel("Todos los campos deben rellenarse");
 		MensajeError.setVisible(false);
-		MensajeError.setBounds(226, 248, 176, 14);
+		MensajeError.setBounds(226, 248, 274, 14);
 		
 		contentPane.add(MensajeError);
 		CrearProyecto.addActionListener(new ActionListener() {
@@ -86,9 +86,9 @@ public class ICreacionProyecto extends JFrame {
 					MensajeError.setVisible(true);
 				}
 				else {
+					p.setNombre(CampoNombre.getText());
 					p.setDuracion(Integer.parseInt(CampoDias.getText()));
 					p.setSprint(Integer.parseInt(CampoSprint.getText()));
-					p.setNombre(CampoNombre.getText());
 					dispose();
 				}
 			}
