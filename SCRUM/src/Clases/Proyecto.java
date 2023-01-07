@@ -2,7 +2,7 @@ package Clases;
 import java.util.ArrayList;
 
 public class Proyecto {
-	private ArrayList<Trabajador> trabajadores=new ArrayList<Trabajador>();
+	private ArrayList<String> trabajadores=new ArrayList<String>();
 	private ArrayList<Tarea> tareas=new ArrayList<Tarea>();
 	private int duracion, sprint;
 	private String nombre;
@@ -10,7 +10,7 @@ public class Proyecto {
 	
 	
 	
-	public ArrayList<Trabajador> getTrabajadores() {
+	public ArrayList<String> getTrabajadores() {
 		return trabajadores;
 	}
 	
@@ -48,7 +48,7 @@ public class Proyecto {
 		}
 	}
 	
-	public boolean añadirTrabajador(Trabajador t) {
+	public boolean añadirTrabajador(String t) {
 		if(!trabajadores.contains(t)) {
 			this.trabajadores.add(t);
 			return true;

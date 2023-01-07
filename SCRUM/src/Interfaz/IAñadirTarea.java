@@ -89,10 +89,10 @@ public class IAñadirTarea extends JFrame {
 		lerror.setBounds(59, 353, 258, 14);
 		contentPane.add(lerror);
 		lerror.setVisible(false);
-		ArrayList<Trabajador> t=new ArrayList<Trabajador>();
+		ArrayList<String> t=new ArrayList<String>();
 		t=p.getTrabajadores();
 		for (int i = 0; i < t.size(); i++) {
-			choice.add(t.get(i).getNombre());
+			choice.add(t.get(i));
 		}
 		
 		button.addActionListener(new ActionListener() {
