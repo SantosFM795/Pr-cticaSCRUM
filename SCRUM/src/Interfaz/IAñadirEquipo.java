@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Clases.Proyecto;
-import Clases.Trabajador;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -22,7 +21,6 @@ public class IAñadirEquipo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField CampoNombre;
-	private Trabajador tr;
 
 	
 	/**
@@ -73,7 +71,7 @@ public class IAñadirEquipo extends JFrame {
 					Rellene.setVisible(true);
 				}
 				else {
-					tr = new Trabajador(CampoNombre.getText());
+					String tr=(CampoNombre.getText());
 					boolean añadir = p.añadirTrabajador(tr);
 					if(añadir==true) {
 						Mensaje.setText("Trabajador guardado");
