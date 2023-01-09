@@ -1,6 +1,7 @@
 
 package Interfaz;
 import java.awt.EventQueue;
+import org.math.plot.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -109,6 +110,23 @@ public class Inicio extends JFrame {
 			}
 		});
 		
+		bGrafica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double[] x = null;
+				double[] y = null;
+				
+				Plot2DPanel plot = new Plot2DPanel();
+				
+				for(int i=0; i < (p.getDuracion()*p.getSprint());i++) {
+					x[i] = i;
+					y[i] = p.esfuerzoTotal(i);
+				}
+				plot.addLinePlot("Grafica Esfuerzo",x,y);
+				JFrame jframe = new JFrame("Grafica esfuerzo");
+				jframe.setContentPane(plot);
+				jframe.setVisible(true);
+			}
+		});
 		bActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IActualizarEstado actualizar=new IActualizarEstado(p);
@@ -126,5 +144,7 @@ public class Inicio extends JFrame {
 		
 		
 		
+
+
 	}
 }

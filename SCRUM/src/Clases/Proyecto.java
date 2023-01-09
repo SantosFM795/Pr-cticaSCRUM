@@ -56,4 +56,12 @@ public class Proyecto {
 			return false;
 		}
 	}
+	
+	public int esfuerzoTotal(int dia) {
+		int esfuerzo=0;
+		for(int i=0;i<tareas.size();i++) {
+			esfuerzo = esfuerzo + tareas.get(i).getEsfuerzo().get(dia-1);
+		}
+		return esfuerzo;
+	}
 }

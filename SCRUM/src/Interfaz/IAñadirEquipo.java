@@ -67,6 +67,8 @@ public class IAñadirEquipo extends JFrame {
 		
 		bGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Rellene.setVisible(false);
+				Mensaje.setVisible(false);
 				if(CampoNombre.getText().equalsIgnoreCase("")) {
 					Rellene.setVisible(true);
 				}
