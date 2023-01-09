@@ -109,7 +109,6 @@ public class Inicio extends JFrame {
 			}
 		});
 		
-<<<<<<< HEAD
 		bGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double[] x = null;
@@ -127,7 +126,6 @@ public class Inicio extends JFrame {
 				jframe.setVisible(true);
 			}
 		});
-=======
 		bActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IActualizarEstado actualizar=new IActualizarEstado(p);
@@ -135,9 +133,6 @@ public class Inicio extends JFrame {
 				
 			}
 		});
-		
-		
-		
->>>>>>> branch 'master' of https://SantosFM795@github.com/SantosFM795/PracticaSCRUM.git
+
 	}
 }
