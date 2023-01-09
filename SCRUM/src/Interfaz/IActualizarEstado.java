@@ -128,7 +128,7 @@ public class IActualizarEstado extends JFrame {
 							p.getTareas().get(posicionTarea).getEsfuerzo().add(p.getTareas().get(posicionTarea).getEsfuerzo().get(i-1));
 						}
 					}
-					dispose();
+					dispose();//
 				}
 			}
 		});
