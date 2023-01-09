@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Clases.Proyecto;
-import Clases.Trabajador;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
