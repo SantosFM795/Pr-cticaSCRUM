@@ -6,11 +6,13 @@ public class Tarea {
 	private String nombreTarea;
 	private ArrayList<Integer> esfuerzo = new ArrayList<Integer>();
 	private String trabajador;
+	private String estado;
 	
 	public Tarea(String nT,int esf_inicial, String trabajador) {
 		this.nombreTarea = nT;
 		this.esfuerzo.add(0, esf_inicial);
 		this.trabajador=trabajador;
+		this.estado="Pendiente";
 	}
 	
 	//Beti
@@ -31,5 +33,9 @@ public class Tarea {
 	
 	public String getTrabajador() {
 		return this.trabajador;
+	}
+	
+	public void setEstado(String estado) {
+		this.estado=estado;
 	}
 }
