@@ -6,5 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/santi/OneDrive/Documentos/NetBeansProjects/PracticaSCRUM/SCRUM/jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/santi/OneDrive/Documentos/NetBeansProjects/PracticaSCRUM/SCRUM/JMathArray-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/santi/OneDrive/Documentos/NetBeansProjects/PracticaSCRUM/SCRUM/JMathIO-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/santi/OneDrive/Documentos/NetBeansProjects/PracticaSCRUM/SCRUM/JMathPlot-1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
