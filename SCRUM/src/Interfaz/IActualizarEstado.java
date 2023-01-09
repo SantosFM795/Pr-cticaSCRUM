@@ -86,12 +86,14 @@ public class IActualizarEstado extends JFrame {
 		}
 		
 		posicionTarea=cTarea.getSelectedIndex();
-		posicionDia=Integer.parseInt(cDia.getSelectedItem());
+
 		
 		cTarea.getItemCount();
 		for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i < p.getDuracion()  ; i++) {
 			cDia.add(""+i);
 		}
+		
+		posicionDia=Integer.parseInt(cDia.getSelectedItem());
 		
 		
 		
@@ -114,7 +116,7 @@ public class IActualizarEstado extends JFrame {
 				}else {
 					lError.setVisible(false);
 					for(int i=p.getTareas().get(posicionTarea).getEsfuerzo().size(); i < posicionDia;i++) {
-						if(i==posicionDia) {
+						if(i==posicionDia-1) {
 							int valor=Integer.parseInt(tHoras.getText());
 							p.getTareas().get(posicionTarea).getEsfuerzo().add(valor);
 							if(valor==0) {
@@ -123,9 +125,10 @@ public class IActualizarEstado extends JFrame {
 								p.getTareas().get(posicionTarea).setEstado("En curso");
 							}
 						}else {
-							p.getTareas().get(posicionTarea).getEsfuerzo().add(p.getTareas().get(posicionTarea).getEsfuerzo().get(i));
+							p.getTareas().get(posicionTarea).getEsfuerzo().add(p.getTareas().get(posicionTarea).getEsfuerzo().get(i-1));
 						}
 					}
+					dispose();
 				}
 			}
 		});

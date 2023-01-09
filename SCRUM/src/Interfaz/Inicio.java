@@ -64,6 +64,7 @@ public class Inicio extends JFrame {
 		contentPane.add(bTrabajador);
 		
 		JButton bActualizar = new JButton("Actualizar Estado");
+		
 		bActualizar.setBounds(481, 94, 141, 39);
 		contentPane.add(bActualizar);
 		
@@ -106,6 +107,15 @@ public class Inicio extends JFrame {
 				bTarea.setVisible(true);
 			}
 		});
+		
+		bActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IActualizarEstado actualizar=new IActualizarEstado(p);
+				actualizar.setVisible(true);
+				
+			}
+		});
+		
 		
 		
 	}
