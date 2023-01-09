@@ -1,7 +1,6 @@
 
 package Interfaz;
 import java.awt.EventQueue;
-import org.math.plot.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,8 +9,6 @@ import javax.swing.border.EmptyBorder;
 import Clases.Proyecto;
 
 import javax.swing.JButton;
-import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -110,7 +107,7 @@ public class Inicio extends JFrame {
 			}
 		});
 		
-		bGrafica.addActionListener(new ActionListener() {
+		/*bGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double[] x = null;
 				double[] y = null;
@@ -125,13 +122,13 @@ public class Inicio extends JFrame {
 				JFrame jframe = new JFrame("Grafica esfuerzo");
 				jframe.setContentPane(plot);
 				jframe.setVisible(true);
-			}
-		});
+			}//
+		});*/
 		bActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IActualizarEstado actualizar=new IActualizarEstado(p);
 				actualizar.setVisible(true);
-				
+				//
 			}
 		});
 		
