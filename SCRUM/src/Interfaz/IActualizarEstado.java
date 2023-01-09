@@ -89,7 +89,7 @@ public class IActualizarEstado extends JFrame {
 
 		
 		cTarea.getItemCount();
-		for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i < p.getDuracion()  ; i++) {
+		for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
 			cDia.add(""+i);
 		}
 		
@@ -100,6 +100,10 @@ public class IActualizarEstado extends JFrame {
 		cTarea.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				posicionTarea=cTarea.getSelectedIndex();
+				cDia.removeAll();
+				for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
+					cDia.add(""+i);
+				}
 			}
 		});
 		
