@@ -71,12 +71,11 @@ public class IAñadirEquipo extends JFrame {
 					Rellene.setVisible(true);
 				}
 				else {
-					String tr=(CampoNombre.getText());
-					boolean añadir = p.añadirTrabajador(tr);
+					boolean añadir = p.añadirTrabajador(CampoNombre.getText());
 					if(añadir==true) {
 						Mensaje.setText("Trabajador guardado");
 					}
-					else {
+					else if(añadir==false){
 						Mensaje.setText("Esa persona ya está registrada en el equipo");
 					}
 					Mensaje.setVisible(true);
