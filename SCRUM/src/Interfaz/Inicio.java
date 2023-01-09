@@ -69,6 +69,7 @@ public class Inicio extends JFrame {
 		contentPane.add(bActualizar);
 		
 		JButton bVer = new JButton("Ver Estado");
+		
 		bVer.setBounds(155, 339, 141, 39);
 		contentPane.add(bVer);
 		
@@ -113,6 +114,13 @@ public class Inicio extends JFrame {
 				IActualizarEstado actualizar=new IActualizarEstado(p);
 				actualizar.setVisible(true);
 				
+			}
+		});
+		
+		bVer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IVerEstado ver=new IVerEstado(p);
+				ver.setVisible(true);
 			}
 		});
 		
