@@ -59,6 +59,7 @@ public class Proyecto {
 	
 	public int esfuerzoTotal(int dia) {
 		int esfuerzo=0;
+		System.out.println(tareas.size() + " xd");
 		for(int i=0;i<tareas.size();i++) {
 			esfuerzo = esfuerzo + tareas.get(i).getEsfuerzo().get(dia-1);
 		}

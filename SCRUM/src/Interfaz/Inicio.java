@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.math.plot.Plot2DPanel;
+
 import Clases.Proyecto;
 
 import javax.swing.JButton;
@@ -107,23 +109,24 @@ public class Inicio extends JFrame {
 			}
 		});
 		
-		/*bGrafica.addActionListener(new ActionListener() {
+		bGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double[] x = null;
-				double[] y = null;
+				double[] x = new double[(p.getDuracion()*p.getSprint())];
+				double[] y = new double[(p.getDuracion()*p.getSprint())];
 				
 				Plot2DPanel plot = new Plot2DPanel();
 				
 				for(int i=0; i < (p.getDuracion()*p.getSprint());i++) {
 					x[i] = i;
-					y[i] = p.esfuerzoTotal(i);
+					y[i] = p.esfuerzoTotal(i+1);
 				}
 				plot.addLinePlot("Grafica Esfuerzo",x,y);
 				JFrame jframe = new JFrame("Grafica esfuerzo");
 				jframe.setContentPane(plot);
+				jframe.setBounds(500, 500, 500, 500);
 				jframe.setVisible(true);
 			}//
-		});*/
+		});
 		bActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IActualizarEstado actualizar=new IActualizarEstado(p);

@@ -6,6 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="JMathArray-1.0.jar"/>
+	<classpathentry kind="lib" path="JMathIO-1.0.jar"/>
+	<classpathentry kind="lib" path="jama-1.0.3.jar"/>
 	<classpathentry kind="lib" path="JMathPlot-1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
