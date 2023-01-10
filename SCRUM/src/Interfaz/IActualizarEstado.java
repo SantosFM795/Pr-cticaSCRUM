@@ -70,7 +70,7 @@ public class IActualizarEstado extends JFrame {
 		contentPane.add(tHoras);
 		tHoras.setColumns(10);
 		
-		JLabel lError = new JLabel("*Este campo no puede estar vacío");
+		JLabel lError = new JLabel("*Error");
 		lError.setForeground(Color.RED);
 		lError.setBounds(199, 259, 189, 14);
 		contentPane.add(lError);
@@ -132,7 +132,7 @@ public class IActualizarEstado extends JFrame {
 		
 		bAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tHoras.getText().equalsIgnoreCase("")) {
+				if(tHoras.getText().equalsIgnoreCase("") || cDia.getSelectedItem().equalsIgnoreCase("Terminado")) {
 					lError.setVisible(true);
 				}else {
 					lError.setVisible(false);

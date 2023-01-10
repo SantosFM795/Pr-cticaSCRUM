@@ -64,7 +64,6 @@ public class IVerEstado extends JFrame {
 				}else if(p.getTareas().get(i).getEsfuerzo().size()<j-2){
 						t[i][j]="";
 				}else{
-					System.out.println(j);
 					t[i][j]=""+p.getTareas().get(i).getEsfuerzo().get(j-3);	
 				}
 			}

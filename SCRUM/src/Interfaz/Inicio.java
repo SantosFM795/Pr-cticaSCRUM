@@ -1,5 +1,6 @@
 
 package Interfaz;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -117,10 +118,19 @@ public class Inicio extends JFrame {
 				Plot2DPanel plot = new Plot2DPanel();
 				
 				for(int i=0; i < p.maximoDia();i++) {
-					x[i] = i;
+					x[i] = i+1;
 					y[i] = p.esfuerzoTotal(i+1);
 				}
+				double[] x1 = new double[(p.getDuracion()*p.getSprint())];
+				double[] y1 = new double[(p.getDuracion()*p.getSprint())];
+				double promedio=(double)p.esfuerzoTotal(1)/((p.getDuracion()*p.getSprint())-1);
+				for (int i = 0; i < y1.length; i++) {
+					x1[i]=i+1;
+					y1[i]=p.esfuerzoTotal(1)-(promedio*i);
+				}
+				
 				plot.addLinePlot("Grafica Esfuerzo",x,y);
+				plot.addLinePlot("Grafica ideal", Color.red, x1, y1);
 				JFrame jframe = new JFrame("Grafica esfuerzo");
 				jframe.setContentPane(plot);
 				jframe.setBounds(500, 500, 500, 500);
