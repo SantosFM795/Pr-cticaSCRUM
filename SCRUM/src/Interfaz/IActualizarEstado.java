@@ -85,15 +85,23 @@ public class IActualizarEstado extends JFrame {
 			cTarea.add(p.getTareas().get(i).getNombre());
 		}
 		
+		
 		posicionTarea=cTarea.getSelectedIndex();
 
 		
 		cTarea.getItemCount();
-		for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
-			cDia.add(""+i);
+		if(p.getTareas().get(posicionTarea).getEsfuerzo().size()==p.getDuracion()*p.getSprint()) {
+			cDia.add("Terminada");
+		}else {
+			for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
+				cDia.add(""+i);
+			}
 		}
+			
 		
-		posicionDia=Integer.parseInt(cDia.getSelectedItem());
+		if(!cDia.getSelectedItem().equalsIgnoreCase("Terminada")) {
+			posicionDia=Integer.parseInt(cDia.getSelectedItem());
+		}
 		
 		
 		
@@ -101,8 +109,17 @@ public class IActualizarEstado extends JFrame {
 			public void itemStateChanged(ItemEvent e) {
 				posicionTarea=cTarea.getSelectedIndex();
 				cDia.removeAll();
-				for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
-					cDia.add(""+i);
+				
+				if(p.getTareas().get(posicionTarea).getEsfuerzo().size()==p.getDuracion()*p.getSprint()) {
+					cDia.add("Terminada");
+				}else {
+					for (int i = p.getTareas().get(posicionTarea).getEsfuerzo().size()+1; i <= p.getDuracion()*p.getSprint()  ; i++) {
+						cDia.add(""+i);
+					}
+				}
+				
+				if(!cDia.getSelectedItem().equalsIgnoreCase("Terminada")) {
+					posicionDia=Integer.parseInt(cDia.getSelectedItem());
 				}
 			}
 		});
