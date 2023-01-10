@@ -111,12 +111,12 @@ public class Inicio extends JFrame {
 		
 		bGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double[] x = new double[(p.getDuracion()*p.getSprint())];
-				double[] y = new double[(p.getDuracion()*p.getSprint())];
+				double[] x = new double[p.maximoDia()];
+				double[] y = new double[p.maximoDia()];
 				
 				Plot2DPanel plot = new Plot2DPanel();
 				
-				for(int i=0; i < (p.getDuracion()*p.getSprint());i++) {
+				for(int i=0; i < p.maximoDia();i++) {
 					x[i] = i;
 					y[i] = p.esfuerzoTotal(i+1);
 				}

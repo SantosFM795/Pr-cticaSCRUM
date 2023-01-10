@@ -61,8 +61,19 @@ public class Proyecto {
 		int esfuerzo=0;
 		System.out.println(tareas.size() + " xd");
 		for(int i=0;i<tareas.size();i++) {
-			esfuerzo = esfuerzo + tareas.get(i).getEsfuerzo().get(dia-1);
+			if(tareas.get(i).getEsfuerzo().size() >= dia)
+				esfuerzo = esfuerzo + tareas.get(i).getEsfuerzo().get(dia-1);
 		}
 		return esfuerzo;
+	}
+	
+	public int maximoDia() {
+		int maximo = tareas.get(0).getEsfuerzo().size();
+		for(int i=1;i < tareas.size();i++) {
+			if(tareas.get(i).getEsfuerzo().size() > maximo) {
+				maximo = tareas.get(i).getEsfuerzo().size();
+			}
+		}
+		return maximo;
 	}
 }
