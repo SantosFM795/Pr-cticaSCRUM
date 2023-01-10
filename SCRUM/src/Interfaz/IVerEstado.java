@@ -12,6 +12,9 @@ import javax.swing.table.DefaultTableModel;
 import Clases.Proyecto;
 
 import javax.swing.JTable;
+import javax.swing.JButton;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class IVerEstado extends JFrame {
 
@@ -28,8 +31,9 @@ public class IVerEstado extends JFrame {
 	 * Create the frame.
 	 */
 	public IVerEstado(Proyecto p) {
+		
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 433);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -68,9 +72,8 @@ public class IVerEstado extends JFrame {
 		
 		
 		JTable tabla=new JTable(t,f1);
-		add(new JScrollPane(tabla),BorderLayout.CENTER);
-		
-		
+		JScrollPane scrollPane = new JScrollPane(tabla);
+		getContentPane().add(scrollPane,BorderLayout.CENTER);
 		
 		
 	}
